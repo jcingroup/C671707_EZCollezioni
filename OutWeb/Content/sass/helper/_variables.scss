@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+// == config
+// ----------------------------------------------------------------------
+$enable-flex:                false !default;           // 是否使用 flex 版
+$enable-RWD:                 true !default;            // 是否有行動裝置版面
+$states:                     true !default;            // 情境文字是否輸出
+$lte7:                       false !default;           // 是否兼容IE6-7
+
+// == color
+// ----------------------------------------------------------------------
+// 語義色
+// http://www.w3schools.com/w3css/w3css_colors.asp
+// 黑白
+$black:                   #000    !default;
+$white:                   #fff    !default;
+$light-gray:              #F1F1F1 !default;
+$gray:                    #9E9E9E !default;
+$dark-gray:               #616161 !default;
+
+// 彩色
+$red:                     #F44336 !default;
+$pink:                    #E91E63 !default;
+$purple:                  #9C27B0 !default;
+$deep-purple:             #673AB7 !default;
+$indigo:                  #3F51B5 !default;
+$blue:                    #2196F3 !default;
+$light-blue:              #87CEEB !default;
+$cyan:                    #00BCD4 !default;
+$aqua:                    #8BE5E3 !default;
+$teal:                    #009688 !default;
+$green:                   #4CAF50 !default;
+$light-green:             #8BC34A !default;
+$lime:                    #CDDC39 !default;
+$sand:                    #FDF5E6 !default;
+$khaki:                   #F0E68C !default;
+$yellow:                  #FFEB3B !default;
+$light-yellow:            #EDE363 !default;
+$amber:                   #FFC107 !default;
+$orange:                  #FF9800 !default;
+$deep-orange:             #FF5722 !default;
+$blue-grey:               #607D8B !default;
+$brown:                   #795548 !default;
+$pale-red:                #FFE7E7 !default;
+$pale-yellow:             #fffFD7 !default;
+$pale-green:              #E7FFE7 !default;
+$pale-blue:               #E7FFFF !default;
+
+$brand-primary:           #073B4C !default;
+$muted:                   $gray !default;
+
+
+// == basic
+// ----------------------------------------------------------------------
+$body-bg:                    $white !default;
+$body-color:                 lighten($black, 20%) !default;
+
+$link-color:                 $brand-primary !default;              // 連結文字色
+$link-decoration:            none !default;                        // 連結底線樣式
+$link-hover-color:           lighten($brand-primary, 15) !default;            // 移過後顏色
+$link-hover-decoration:      false !default;                       // 移過後底線樣式
+$link-transition:            color .35s, background .3s !default;  // 滑鼠移過動態特效
+
+$tab-focus-outline:          1px solid darken($brand-primary, 5) !default; // 聚焦色
+$link-tab-fous:              false !default;                               // 聚焦樣式, 可設 true,false,thin dotted #顏色碼
+
+
+// == Grid
+// ----------------------------------------------------------------------
+$grid-columns:               12 !default;    // for grid: 網格格數
+$gutter:                     16px !default;  // for grid: 左右留白
+$spacer:                     1rem !default;  // 間距
+$spacing: (
+    0: (
+        x:   0,
+        y:   0
+    ),
+    2: (
+        x:   ($spacer / 8),
+        y:   ($spacer / 8)
+    ),
+    4: (
+        x:   ($spacer / 4),
+        y:   ($spacer / 4)
+    ),
+    8: (
+        x:   ($spacer / 2),
+        y:   ($spacer / 2)
+    ),
+    12: (
+        x:   ($spacer * 0.75),
+        y:   ($spacer * 0.75)
+    ),
+    16: (
+        x:   $spacer,
+        y:   $spacer
+    ),
+    24: (
+        x:   ($spacer * 1.5),
+        y:   ($spacer * 1.5)
+    ),
+    32: (
+        x:   ($spacer * 2),
+        y:   ($spacer * 2)
+    ),
+    48: (
+        x:   ($spacer * 3),
+        y:   ($spacer * 3)
+    ),
+    64: (
+        x:   ($spacer * 4),
+        y:   ($spacer * 4)
+    )
+) !default;
+
+
+// == font
+// ----------------------------------------------------------------------
+$font-family-base:           \5FAE\8EDF\6B63\9ED1\9AD4,"微軟正黑體","Microsoft JhengHei",'Helvetica Neue',Helvetica,Arial,sans-serif !default;
+
+$font-size-base:             16px !default;     // 1rem
+$font-size-lg:               $font-size-base * 1.25 !default;  // 20px
+$font-size-sm:               $font-size-base * .875 !default;  // 14px
+$font-size-xs:               $font-size-base * .8125 !default; // 13px - 微軟正黑體下建議最小為 13
+
+$font-size-h1:               $font-size-base * 2.625 !default;   // 42px old-2.5
+$font-size-h2:               $font-size-base * 2.0625 !default;  // 33px old-2
+$font-size-h3:               $font-size-base * 1.75 !default;    // 28px old-1.75
+$font-size-h4:               $font-size-base * 1.5625 !default;  // 25px old-1.5
+$font-size-h5:               $font-size-base * 1.3125 !default;  // 21px old-1.25
+$font-size-h6:               $font-size-base * 1.0625 !default;  // 17px old-1
+
+$line-height:                1.5 !default;
+
+$headings-color:             false !default;
+$headings-font-family:       false !default;
+$headings-font-weight:       500 !default;
+$headings-line-height:       1.1 !default;
+$headings-letter-spacing:    false !default;
+$headings-margin-bottom:     $spacer !default;
+
+$lead-font-size:             $font-size-base * 1.25 !default;
+$lead-font-weight:           300 !default;
+
+$p-spacer:                   $spacer !default;
+
+
+// == element
+// ----------------------------------------------------------------------
+$text-muted:                 $muted !default;
+
+$blockquote-small-color:     lighten($black, 46.7%) !default;
+$blockquote-font-size:       ($font-size-base * 1.25) !default;
+$blockquote-border-color:    lighten($black, 93.5%) !default;
+
+$abbr-border-color:          $muted !default;
+
+$hr-border:                  1px solid $abbr-border-color !default;
+
+$dt-font-weight:             bold !default;
+
+$cursor-disabled:            not-allowed; // 表單元素(停用)上的滑鼠樣式
+
+$border-radius:              $font-size-base/4 !default;
+
+$prefixes:                   webkit !default;
+
+
+// == RWD-break
+// ----------------------------------------------------------------------
+$mq-breakpoints: (
+    mobile:           375px,  // 380px,
+    phone:            568px,  // 480px,
+    phone-plus:       667px,  // 640px,
+    tablet:           768px,  // 768px,
+    desktop:          1024px, // 980px,
+    wide:             1200px,
+    wider:            1400px
+) !default;
+
+$grid-breakpoints: (
+    xs: phone,
+    sm: tablet,
+    md: desktop,
+    lg: wide,
+    xl: wider
+) !default;

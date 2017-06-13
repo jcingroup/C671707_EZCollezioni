@@ -1,0 +1,53 @@
+﻿@charset "UTF-8";
+
+// 響應式表格 < 768 時會出現水平卷軸
+.table-rwd {
+    overflow-x: auto;
+    min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+    max-width: $max-width;
+
+    table { @extend .full; }
+
+    @include mq-max(break(desktop,-1)) {
+        width: 100%;
+        // margin-bottom: ($spacer * 0.75);
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+
+        table {
+            margin-bottom: 0;
+
+            th, td { white-space: nowrap; }
+        }
+    }
+}
+
+// 表格變形
+.rwd-table {
+    @include mq-max(tablet) {
+        tr, td { display: block; border: none; }
+        tr {
+            position: relative;
+
+            // 本次專案
+            &:not(:first-of-type) {
+                border-top: $table-border;
+            }
+        }
+        th { display: none; }
+        td {
+            text-align: left;
+
+            &::before {
+                content: attr(data-th)":"; // who knew you could do this? The internet, that's who.
+                font-weight: bold;
+                margin-right: 10px;
+                color: lighten($muted,10);
+            }
+
+            // 本次專案
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+}

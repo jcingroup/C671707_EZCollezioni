@@ -1,0 +1,887 @@
+@charset "UTF-8";
+
+// 本頁專用變數(覆蓋)
+// ------------------------------------------------------------
+$isPage:                 true;
+
+$p-spacer:             .5rem;
+// $figcaption-full:      true;
+
+
+// import
+// ------------------------------------------------------------
+// 本次專案專用變數
+@import "_client/settings";
+
+// 共用
+@import "helper/function";
+@import "helper/variables";
+@import "helper/mixins";
+
+// 由此 output css
+@import "vendor/normalize"; // 重置復位
+@import "vendor/print";     // 列印樣式
+
+@import "base/basic";
+@import "base/form";
+@import "base/table";
+@import "base/util";
+
+// 本頁專用
+@import "_client/unit/nav";
+@import "_client/unit/goTop";
+@import "_client/unit/btn";
+@import "_client/unit/list";
+@import "_client/unit/figure";
+@import "_client/unit/fields";
+@import "_client/unit/input-choiceBoxs";
+@import "_client/unit/input-group";
+@import "_client/unit/modal";
+@import "_client/unit/table-rwd";
+@import "_client/unit/classes"; // 建議放置在最後一個
+
+@import "_client/layout";
+
+
+// main
+// ------------------------------------------------------------
+
+// == 產品
+// 帳密寶landing page
+.ArhPass {
+    section {
+        @extend %clearfix, .text-white;
+        h1, h3, h4 { @extend .text-white; }
+    }
+}
+// #1
+.intro {
+    background: #00092d url(#{$img-path}/Products/introBg.gif) right center no-repeat;
+    padding-top: 60px;
+    padding-bottom: 48px;
+
+    @include mq-max(break(wide,-1)) {
+        overflow: hidden;
+        position: relative;
+        background-size: auto 100%;
+        background-position: center;
+    }
+
+    article {
+        @extend .p-l-64;
+        margin-top: 10px;
+        @include mq-max(break(desktop,-1)) {
+            position: relative;
+            z-index: 2;
+            margin-top: 0;
+            padding-left: 3%;
+        }
+        @include mq-max(tablet) {
+            margin-top: 50px;
+        }
+    }
+    h4 {
+        @extend .m-t-12, .m-b-0;
+        line-height: 1.35;
+
+        &:first-of-type {
+            margin-top: 18px;
+        }
+        &:last-of-type {
+            margin-bottom: 35px;
+        }
+        @include mq-max(mobile) {
+            font-size: em(20);
+        }
+    }
+    p {
+        line-height: 1.65;
+        font-size: em(18);
+
+        @include mq-max(phone) {
+            font-size: em(16);
+        }
+    }
+    img {
+        @include mq-max(break(desktop,-1)) {
+            @include absolute(right -5% top 8%);
+        }
+        @include mq-max(tablet) {
+            right: -15%;
+            width: 60%;
+        }
+    }
+}
+// #2
+.feat {
+    background: #eee url(#{$img-path}/Products/featBg.jpg) center bottom no-repeat;
+    padding-top: 125px;
+
+    @include mq(wide) {
+        height: 302px;
+    }
+    @include mq-max(break(wide,-1)) {
+        padding-top: 6%;
+        padding-bottom: 2%;
+        background-size: cover;
+    }
+    @include mq-max(mobile) {
+        background-size: auto 150%;
+        padding-bottom: 1%;
+    }
+
+    h1 {
+        @extend .m-l-64;
+        font-weight: bold;
+        line-height: 1.15;
+        width: 65%;
+
+        @include mq-max(break(desktop,-1)) {
+            margin-left: 3%;
+        }
+        @include mq-max(tablet) {
+            width: 56%;
+        }
+        @include mq-max(phone-plus) {
+            font-size: em(33);
+        }
+        @include mq-max(phone) {
+            font-size: em(25);
+            width: calc(100% - 210px);
+        }
+        @include mq-max(mobile) {
+            font-size: em(17);
+            width: calc(100% - 150px);
+        }
+    }
+    strong {
+        font-size: rem(60);
+        @include mq-max(phone) {
+            font-size: rem(40);
+        }
+        @include mq-max(mobile) {
+            font-size: em(21);
+        }
+    }
+    em { margin-right: 6px; }
+    ul { @extend .m-r-64, .m-t-32; }
+}
+// #3
+.central {
+    position: relative;
+    // all
+    h3 { font-weight: bold; margin-top: 0; }
+    p { line-height: 1.85; }
+
+    @include mq-max(phone) {
+        h3 { font-size: rem(25); }
+        strong { font-size: rem(36); }
+    }
+    @include mq-max(mobile) {
+        h3 { font-size: rem(18); }
+        strong { font-size: rem(29); }
+        p {
+            line-height: 1.65;
+            font-size: em(13);
+        }
+    }
+    // p1
+    .p1 {
+        padding-right: 2%;
+        padding-top: 55px;
+        margin-bottom: 30px;
+
+        p {
+            &:first-of-type { margin-bottom: 55px; }
+        }
+        @include mq(wide) {
+            padding-right: 100px;
+        }
+        @include mq-max(break(desktop,-1)) {
+            padding-top: 20px;
+            h3:nth-of-type(2),
+            p:nth-of-type(2) {
+                margin-left: 51%;
+            }
+            p:first-of-type {
+                margin-bottom: 25px;
+            }
+        }
+        @include mq-max(break(tablet,-1)) {
+            h3:nth-of-type(2),
+            p:nth-of-type(2) {
+                margin-left: 40.5%;
+            }
+        }
+    }
+    .pic-product {
+        @include absolute(top 60px);
+        @include mq(tablet,break(wide,-1)) {
+            max-width: 47%;
+            left: 2%;
+        }
+        @include mq(wide) {
+            left: 34px;
+        }
+        @include mq-max(break(desktop,-1)) {
+            top: 23%;
+        }
+        @include mq-max(break(tablet,-1)) {
+            left: -24%;
+            width: 65%;
+        }
+        @include mq-max(phone) {
+            top: 26%;
+            left: -30%;
+            width: 72%;
+        }
+    }
+
+    // p2
+    aside {
+        overflow: hidden;
+        max-height: 280px;
+        @include mq(tablet,break(desktop,-1)) {
+            max-height: 330px;
+        }
+        @include mq(break(phone,+1),break(tablet,-1)) {
+            max-height: 320px;
+        }
+        @include mq-max(mobile) {
+            max-height: 200px;
+        }
+    }
+    .p2 {
+        padding-left: 5%;
+        margin-top: 75px;
+
+        @include mq(wide) {
+            padding-left: 150px;
+        }
+        @include mq-max(break(desktop,-1)) {
+            margin-top: 17%;
+        }
+        @include mq(tablet,800px) {
+            margin-top: 10.5%;
+        }
+        @include mq-max(break(phone,-1)) {
+            margin-top: 0;
+        }
+    }
+    .pic-app {
+        @include mq(tablet,break(desktop,-1)) {
+            max-width: 80%;
+        }
+        @include mq-max(break(tablet,-1)) {
+            max-width: none;
+            width: 300px;
+        }
+        @include mq-max(phone) {
+            width: 250px;
+        }
+        @include mq-max(mobile) {
+            width: 180px;
+        }
+    }
+}
+// #4
+.quality {
+    background: $brand-primary url(#{$img-path}/Products/qualityBg.jpg) center 15% no-repeat;
+    padding-top: 52px;
+
+    @include mq-max(break(desktop,-1)) {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    h1 {
+        font-weight: bold;
+        line-height: 1.5;
+        letter-spacing: 1px;
+
+        @include mq(desktop) {
+            float: left;
+            width: 43.2%;
+            margin-top: 150px;
+            margin-left: 3%;
+        }
+        @include mq(wide) {
+            margin-left: 115px;
+        }
+        @include mq-max(break(desktop,-1)) {
+            margin-left: 2.5%;
+        }
+        @include mq-max(phone) {
+            font-size: em(38);
+        }
+        @include mq-max(mobile) {
+            font-size: em(29);
+        }
+    }
+}
+.list-unstyled {
+    &.check {
+        @extend .font-xl;
+        font-weight: bold;
+
+        @include mq-max(break(desktop,-1)) {
+            margin-right: 3%;
+            margin-top: 8.5%;
+        }
+        @include mq-max(phone-plus) {
+            font-size: em(19);
+            margin-top: 12%;
+        }
+        @include mq-max(mobile) {
+            font-size: em(14);
+            margin-top: 5%;
+        }
+
+        li {
+            background: url(#{$img-path}/icon-check.svg) 0 center no-repeat;
+            background-size: 28px 80%;
+            padding-left: 38px;
+            @include mq-max(mobile) {
+                padding-left: 25px;
+            }
+        }
+    }
+    &.ex {
+        @include mq(desktop) {
+            margin-right: 56px;
+        }
+        li {
+            @extend .m-y-32;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            padding-left: 80px;
+            padding-top: 10px;
+            font-size: em(18);
+
+            @include mq-max(mobile) {
+                margin: 16px 0;
+                font-size: em(14);
+            }
+
+            &:nth-child(1) {
+                background-image: url(#{$img-path}/icon-cloud.svg);
+                background-size: 60px 36px;
+            }
+            &:nth-child(2) {
+                background-image: url(#{$img-path}/icon-check.svg);
+                background-size: 40px 40px;
+                background-position: 9px 0;
+            }
+            &:nth-child(3) {
+                background-image: url(#{$img-path}/icon-keyboard.svg);
+                background-size: 58px 26px;
+                background-position: 0 10px;
+            }
+        }
+        h4 {
+            @extend .m-t-0;
+            margin-bottom: 14px;
+            font-size: em(24,18);
+            font-weight: bold;
+        }
+    }
+}
+.spec {
+    padding-top: 26px;
+    padding-bottom: 26px;
+
+    h1 {
+        @extend .m-t-16, .m-b-64;
+        @include mq-max(phone) {
+            font-size: em(38);
+        }
+        @include mq-max(mobile) {
+            font-size: em(28);
+        }
+    }
+    dt {
+        font-size: em(40);
+        font-weight: bold;
+        background-repeat: no-repeat;
+        padding-top: 80px;
+        @include mq(tablet) {
+            padding-top: 98px;
+            margin-bottom: 28px;
+        }
+        @include mq-max(phone) {
+            font-size: em(25);
+        }
+    }
+    dl {
+        @include mq-max(break(tablet,-1)) {
+            margin-bottom: 35px;
+        }
+
+        &:nth-of-type(1) dt {
+            background-image: url(#{$img-path}/icon-battery.svg);
+            background-position: center 8px;
+            background-size: 93px 44px;
+        }
+        &:nth-of-type(2) dt {
+            background-image: url(#{$img-path}/icon-clock.svg);
+            background-position: center 7px;
+            background-size: 60px 60px;
+        }
+        &:nth-of-type(3) dt {
+            background-image: url(#{$img-path}/icon-out.svg);
+            background-position: center 0;
+            background-size: 58px 72px;
+        }
+    }
+    dd {
+        @extend .text-left, .p-x-48;
+        font-size: em(24);
+
+        @include mq(tablet, desktop) {
+            padding-left: 1.5%;
+            padding-right: 1.5%;
+        }
+        @include mq-max(break(tablet,-1)) {
+            padding-left: 10%;
+            padding-right: 10%;
+            font-size: em(19);
+        }
+        @include mq-max(mobile) {
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+    }
+}
+.faq-bar {
+    @extend .p-y-24;
+    background-color: #d1baa5;
+
+    .btn {
+        background: transparent;
+        color: rgba(#fff,.85);
+        border: 3px solid $white;
+        letter-spacing: 1px;
+        border-radius: 10px;
+
+        &:hover, &:active, &:focus {
+            background: darken(#d1baa5,10);
+            color: $white;
+        }
+
+        @include mq-max(mobile) {
+            font-size: em(24);
+        }
+    }
+}
+
+// 列表用 goods
+.goods {
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px 1%;
+    width: 31%;
+
+    @include mq-max(break(desktop, -1)) {
+        width: 45%;
+    }
+    @include mq-max(phone) {
+        width: 100%;
+    }
+
+    h6 { @extend .m-t-16, .m-b-8; }
+    strong { @extend .font-lg, .text-success; }
+    figcaption {
+        @include el(before) {
+            @include absolute(top 0);
+            @include transition(opacity .35s);
+            opacity: 0;
+            width: 100%;
+            height: 250px;
+            background: rgba(#000,.7);
+        }
+    }
+    p {
+        z-index: z(figure) + 1;
+        @include absolute(top 37% left 50%);
+        @include transform(scale(0) translate(-50%, -50%));
+        @include prefix(transform-origin,0 0);
+        @include transition(background .3s, transform .6s);
+
+        a { display: inline-block; }
+        span {
+            @extend .font-md, .text-white, .m-t-8;
+            display: block;
+        }
+    }
+    .btn-circle {
+        @extend .bg-success, .text-white, .font-xl, .m-x-4;
+
+        @include transition(background .5s);
+        @include circle(62px, center);
+
+        vertical-align: middle;
+
+        &:hover, &:active {
+            background: $danger;
+            color: #fff;
+        }
+        &:focus {
+            box-shadow: inset 3px 3px 5px rgba(#000,.25);
+            background: darken($danger,5);
+        }
+    }
+    &:hover, &:active, &:focus {
+        strong { color: lighten($danger,20); }
+        figcaption:before { opacity: 1; }
+        p { @include transform(scale(1) translate(-50%, -50%)); }
+    }
+}
+.goods-img {
+    @extend .p-y-24;
+    background: #eee;
+
+    @include middle(img, 250px) {
+        max-width: 98%;
+        max-height: 100%;
+    }
+}
+
+// 產品內頁
+.product-pic {
+    background: #eee;
+    height: 450px;
+
+    .swiper-slide {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    img {
+        max-height: 400px;
+        max-width: 100%;
+    }
+    h4 {
+        @include absolute(left 4% top 0);
+        color: #000;
+        font-size: em(35);
+    }
+}
+.product-info {
+    @extend .text-left, .p-l-32;
+    header {
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid lighten($muted,55);
+    }
+    .btn-bar { margin-top: 24px; }
+    .btn {
+        @extend .p-y-8;
+        vertical-align: middle;
+    }
+}
+
+// == 購物車 Order
+
+// 帳單列表 checkout
+.payment-list {
+    margin-bottom: rem(40);
+
+    label {
+        margin: 2px 0;
+        &:not(:first-of-type) { margin-left: 0; }
+    }
+    th { word-break: keep-all; }
+}
+.payment-title {
+    color: darken($danger,10);
+
+    em {
+        @extend .m-r-12;
+        color: lighten($danger,15);
+        font-size: em(27);
+        font-style: normal;
+        line-height: 1;
+        position: relative;
+        top: 4px;
+    }
+}
+.payment-table {
+    @extend %full;
+    margin-bottom: 0;
+
+    .pic { width: 80px; }
+    .type { width: 18%; }
+    .num { width: 11%; } // 從第3個之後
+    .del { width: 7%; }
+    img { max-height: 60px; }
+    caption {
+        @extend .font-lg, .p-x-8, .p-y-4, .bg-secondary, .text-white, .text-left;
+    }
+}
+.payment-total {
+    // @extend .p-t-12, .p-b-4;
+    background: lighten($muted,59);
+    border-top: 1px solid $table-border-color;
+
+    @include mq-max(phone) {
+        text-align: left;
+        margin-bottom: 6px;
+    }
+    @include mq(break(phone,+1)) {
+        padding-top: 12px;
+        padding-bottom: 4px;
+        .total { margin-top: -4px; }
+    }
+
+    dl {
+        @extend .m-b-0;
+        @include mq(break(phone,+1)) {
+            margin-right: 16px;
+        }
+        @include mq-max(phone) {
+            margin-left: 8px;
+            margin-right: 8px;
+
+            &:not(.total) {
+                border-bottom: 1px dashed rgba(#000,.1);
+            }
+        }
+    }
+    dt, dd {
+        display: inline-block;
+        @include mq-max(phone) {
+            margin: 6px 0;
+        }
+    }
+    dt {
+        @include mq-max(phone) {
+            margin-right: 4px;
+            vertical-align: middle;
+            @include el(after,false,':');
+        }
+    }
+    dd {
+        @include mq(break(phone,+1)) {
+            width: 190px;
+        }
+    }
+}
+
+// 訂單送出後資料確認(Verify)
+.payment-info {
+    @extend %list-unstyled, .font-lg, .m-t-32, .m-b-24;
+    border-top: 1px solid lighten($muted,50);
+    li {
+        @extend .p-y-4;
+        color: #222;
+        border-bottom: 1px solid lighten($muted,50);
+    }
+    small { @extend .m-r-16; }
+}
+
+// == 關於我們
+.main-text {
+    @extend %clearfix, .text-left, .m-t-32;
+    border-top: 1px solid #999;
+    padding: 40px $gutter 50px $gutter;
+
+    h4 { font-weight: bold; line-height: 1.35; }
+    h6 { color: #707070; }
+    h6 + h4 { @extend .m-t-16; }
+
+    @include mq(wide) {
+        padding-left: 8.3%;
+        padding-right: 8.3%;
+    }
+}
+
+// == 常見問題
+.faq-list {
+    dd { @extend .m-b-24; }
+}
+
+// == APP 使用流程
+.stage {
+    border-top: 1px solid #999;
+    // padding: 40px 5% 0 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    position: relative;
+
+    h1 { margin-top: 30px; }
+}
+// 分頁
+.swiper-pager {
+    position: absolute;
+    bottom: 135px !important;
+    z-index: 2;
+}
+.icon-prev, .icon-next {
+    cursor: pointer;
+    @extend .hover-text-info;
+    @include transition(color .3s);
+}
+.carousel {
+    margin-top: 84px;
+    img {
+        max-width: 200px;
+        margin-bottom: 120px;
+    }
+    h5 {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        color: #222;
+    }
+
+    .swiper-slide {
+        opacity: .65;
+        @include transition(all .5s);
+
+        h5, p, ol {
+            opacity: 0;
+            @include transition(all .5s);
+        }
+    }
+    .swiper-slide.swiper-slide-active {
+        opacity: 1;
+        h5, p, ol { opacity: 1; }
+    }
+}
+.carousel-prev, .carousel-next {
+    color: #DBDCDC;
+    font-size: em(50);
+    font-weight: bold;
+
+    @include absolute(top 38%);
+}
+.carousel-prev { left: 0; }
+.carousel-next { right: 0; }
+.mobile-shell {
+    @include pos-center(x);
+    width: 233px;
+    height: 464px;
+    background: url(#{$img-path}/Workflow/mobile.png) center no-repeat;
+    top: 104px;
+    z-index: z(header) - 1;
+}
+
+
+// == 子選單(會員)
+.sub-nav {
+    a {
+        @extend .font-xl, .text-muted, .hover-text-secondary;
+        display: inline-block;
+
+        &:not(:last-child) {
+            @extend .m-r-12;
+            @include el(after, false, '/') {
+                @extend .m-l-12;
+                color: $muted;
+            }
+        }
+
+        &.current { color: darken($brand-secondary,10); }
+    }
+}
+
+// == 會員(User)
+
+// 會員登入 | 加入會員(User/Login)
+.login-reg {
+    form:first-child {
+        @include mq-max(break(desktop,-1)) {
+            margin-bottom: 38px;
+            padding-bottom: 38px;
+            border-bottom: 1px solid lighten($muted,35);
+        }
+        .btn { @extend .m-b-8; }
+    }
+    .btn {
+        width: 50%;
+        @include mq-max(break(desktop,-1)) {
+            width: 100%;
+        }
+    }
+}
+
+// 忘記密碼(ForgetPW)
+.forgetPW {
+    .btn {
+        @include mq(tablet) {
+            margin-left: percentage(2 / $grid-columns) + cp($gutter/2.5);
+        }
+        @include mq(desktop) {
+            margin-left: percentage(1 / $grid-columns) + cp($gutter/2.5);
+        }
+    }
+}
+
+// 會員資料編輯(Account)
+.account-data {
+    fieldset {
+        margin-bottom: 48px;
+
+        @include mq-max(break(tablet,-1)) {
+            &:nth-child(2) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .btn { width: 35%; }
+}
+
+// == 專案合作(Home/Partners)
+.Partners {
+    .btn { width: 25%; }
+}
+// == 最新消息
+// .panel {
+//     @extend .text-left, .p-a-12, .m-b-24;
+//     border: 1px solid lighten($brand-secondary,50);
+//     border-radius: 5px;
+
+//     &:not(:last-child) { @extend .m-b-24; }
+
+//     .collapse-title {
+//         @extend .font-lg;
+
+//         &:hover, &:active { color: $brand-primary; }
+
+//         span {
+//             @extend .font-md, .m-r-4;
+//             color: #999;
+//         }
+//     }
+//     .collapse-content {
+//         @extend .m-t-8, .p-t-8;
+//         border-top: 1px solid lighten($brand-secondary,50);
+//     }
+// }
+
+// == 聯絡我們
+
+// == common
+// 表單送出
+.submit-bar {
+    @extend .m-t-24, .m-b-32;
+
+    .btn-link { margin-top: 12px; }
+
+    .btn {
+        @include mq-max(tablet) {
+            width: 100% !important;
+            text-align: center;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}

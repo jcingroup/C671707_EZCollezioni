@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+
+// output
+// ------------------------------------------------------------
+.row {
+    @extend %clearfix;
+    & + & { margin-top: $spacer/2; }
+}
+
+// helper> mixins> grid
+@include make-grid-columns();
+
+.row-x-0 {
+    > [class*="col"] {
+        &:first-child { padding-left: 0; }
+        &:last-child { padding-right: 0; }
+    }
+}
+.row-a-0 {
+    > [class*="col"] { padding: 0; }
+}
+// .col-first { padding-left: 0; }
+// .col-last  { padding-right: 0; }
+
+// 簡單 col 應用
+// Ref: https://www.w3schools.com/w3css/w3css_grid.asp
+.col-rest  { overflow: hidden; }
+.col {
+    display: inline-block;
+    vertical-align: top;
+}
