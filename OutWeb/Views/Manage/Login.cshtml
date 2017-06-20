@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_MLayout.cshtml";
+    ViewBag.Title = "JCIN後台管理系統";
+    ViewBag.BodyClass = "Login";
+}
+
+<h1 class="logo">
+    @* @Resources.Res.System_Name<small>Web Manager</small> *@
+    鐳揚創智管理系統<small class="text-muted m-l-8">Web Manager</small>
+</h1>
+<h5 class="font-sp text-primary">ElegaZzle Collezioni &copy; 2017</h5>
+
+<form class="text-left">
+
+    <header class="title font-sp">System Login</header>
+
+    <main>
+        <label>帳號 Username</label>
+        <input type="text" class="form-element" required>
+
+        <label>密碼 Password</label>
+        <input type="password" class="form-element" required>
+
+        <label>驗證碼 Code</label>
+        <input type="text" class="form-element" required>
+    </main>
+
+    <footer class="action-bar text-center">
+        <button type="button" class="btn" onclick="location.href='@Url.Content("~/Manage/NewsList")'">登入 LOGIN</button>
+    </footer>
+</form>

@@ -18,6 +18,13 @@ namespace Work.WebProj
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            // 後台
+            routes.MapRoute(
+                name: "Manage",
+                url: "_SysAdm",
+                defaults: new { controller = "Manage", action = "Login" }
+            ).DataTokens["UseNamespaceFallback"] = false;
         }
     }
 }

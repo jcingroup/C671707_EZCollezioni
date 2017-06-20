@@ -625,11 +625,7 @@ summary,
 textarea {
   touch-action: manipulation; }
 
-.btn,
-button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+.btn {
   display: inline-block;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -641,72 +637,24 @@ input[type='submit'] {
   letter-spacing: 1px;
   min-width: 175px;
   text-align: center; }
-  .btn:hover, .btn:active, .btn:focus,
-  button:hover,
-  button:active,
-  button:focus,
-  input[type='button']:hover,
-  input[type='button']:active,
-  input[type='button']:focus,
-  input[type='reset']:hover,
-  input[type='reset']:active,
-  input[type='reset']:focus,
-  input[type='submit']:hover,
-  input[type='submit']:active,
-  input[type='submit']:focus {
+  .btn:hover, .btn:active, .btn:focus {
     background: #b28247;
     color: #fff; }
-  .btn.disabled, .btn[disabled], fieldset[disabled] .btn,
-  button.disabled,
-  button[disabled], fieldset[disabled]
-  button,
-  input[type='button'].disabled,
-  input[type='button'][disabled], fieldset[disabled]
-  input[type='button'],
-  input[type='reset'].disabled,
-  input[type='reset'][disabled], fieldset[disabled]
-  input[type='reset'],
-  input[type='submit'].disabled,
-  input[type='submit'][disabled], fieldset[disabled]
-  input[type='submit'] {
+  .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
     cursor: not-allowed;
     opacity: .65;
     background-color: #ececec; }
-  .btn.sm,
-  button.sm,
-  input[type='button'].sm,
-  input[type='reset'].sm,
-  input[type='submit'].sm {
+  .btn.sm {
     padding: 5.656px 11.2px; }
-  .btn.lg,
-  button.lg,
-  input[type='button'].lg,
-  input[type='reset'].lg,
-  input[type='submit'].lg {
+  .btn.lg {
     padding: 8.08px 16px; }
-  .btn.outline,
-  button.outline,
-  input[type='button'].outline,
-  input[type='reset'].outline,
-  input[type='submit'].outline {
+  .btn.outline {
     background: transparent;
     border: 1px solid #262626;
     color: #000;
     letter-spacing: 1px;
     text-align: center; }
-    .btn.outline:hover, .btn.outline:active, .btn.outline:focus,
-    button.outline:hover,
-    button.outline:active,
-    button.outline:focus,
-    input[type='button'].outline:hover,
-    input[type='button'].outline:active,
-    input[type='button'].outline:focus,
-    input[type='reset'].outline:hover,
-    input[type='reset'].outline:active,
-    input[type='reset'].outline:focus,
-    input[type='submit'].outline:hover,
-    input[type='submit'].outline:active,
-    input[type='submit'].outline:focus {
+    .btn.outline:hover, .btn.outline:active, .btn.outline:focus {
       background: #333333;
       color: #fff; }
 
@@ -1296,169 +1244,85 @@ input[type='submit'] {
 .text-primary {
   color: #006390; }
 
-.bg-primary, .btn.primary,
-button.primary,
-input[type='button'].primary,
-input[type='reset'].primary,
-input[type='submit'].primary {
+.bg-primary, .btn.primary {
   background: #0075a9; }
 
 .hover-text-primary:hover, #menu a:hover, .hover-text-primary:active, #menu a:active {
   color: #0087c3; }
 
-.hover-primary:hover, .btn.primary:hover,
-button.primary:hover,
-input[type='button'].primary:hover,
-input[type='reset'].primary:hover,
-input[type='submit'].primary:hover, .hover-primary:active, .btn.primary:active,
-button.primary:active,
-input[type='button'].primary:active,
-input[type='reset'].primary:active,
-input[type='submit'].primary:active {
+.hover-primary:hover, .btn.primary:hover, .hover-primary:active, .btn.primary:active {
   background: #0091d2; }
 
 .text-secondary {
   color: #a07540; }
 
-.bg-secondary, .btn.secondary,
-button.secondary,
-input[type='button'].secondary,
-input[type='reset'].secondary,
-input[type='submit'].secondary {
+.bg-secondary, .btn.secondary {
   background: #b28247; }
 
 .hover-text-secondary:hover, .news-list a:hover, .hover-text-secondary:active, .news-list a:active {
   color: #bc8e57; }
 
-.hover-secondary:hover, .btn.secondary:hover,
-button.secondary:hover,
-input[type='button'].secondary:hover,
-input[type='reset'].secondary:hover,
-input[type='submit'].secondary:hover, .hover-secondary:active, .btn.secondary:active,
-button.secondary:active,
-input[type='button'].secondary:active,
-input[type='reset'].secondary:active,
-input[type='submit'].secondary:active {
+.hover-secondary:hover, .btn.secondary:hover, .hover-secondary:active, .btn.secondary:active {
   background: #c09662; }
 
 .text-muted {
   color: #dfdfdf; }
 
-.bg-muted, .btn.muted,
-button.muted,
-input[type='button'].muted,
-input[type='reset'].muted,
-input[type='submit'].muted {
+.bg-muted, .btn.muted {
   background: #ececec; }
 
 .hover-text-muted:hover, .hover-text-muted:active {
   color: #f9f9f9; }
 
-.hover-muted:hover, .btn.muted:hover,
-button.muted:hover,
-input[type='button'].muted:hover,
-input[type='reset'].muted:hover,
-input[type='submit'].muted:hover, .hover-muted:active, .btn.muted:active,
-button.muted:active,
-input[type='button'].muted:active,
-input[type='reset'].muted:active,
-input[type='submit'].muted:active {
+.hover-muted:hover, .btn.muted:hover, .hover-muted:active, .btn.muted:active {
   background: white; }
 
 .text-success {
   color: #009ca4; }
 
-.bg-success, .btn.success,
-button.success,
-input[type='button'].success,
-input[type='reset'].success,
-input[type='submit'].success {
+.bg-success, .btn.success {
   background: #00b4bd; }
 
 .hover-text-success:hover, .hover-text-success:active {
   color: #00ccd7; }
 
-.hover-success:hover, .btn.success:hover,
-button.success:hover,
-input[type='button'].success:hover,
-input[type='reset'].success:hover,
-input[type='submit'].success:hover, .hover-success:active, .btn.success:active,
-button.success:active,
-input[type='button'].success:active,
-input[type='reset'].success:active,
-input[type='submit'].success:active {
+.hover-success:hover, .btn.success:hover, .hover-success:active, .btn.success:active {
   background: #00dbe6; }
 
 .text-info {
   color: #2a8ce2; }
 
-.bg-info, .btn.info,
-button.info,
-input[type='button'].info,
-input[type='reset'].info,
-input[type='submit'].info {
+.bg-info, .btn.info {
   background: #4098e5; }
 
 .hover-text-info:hover, .hover-text-info:active {
   color: #56a4e8; }
 
-.hover-info:hover, .btn.info:hover,
-button.info:hover,
-input[type='button'].info:hover,
-input[type='reset'].info:hover,
-input[type='submit'].info:hover, .hover-info:active, .btn.info:active,
-button.info:active,
-input[type='button'].info:active,
-input[type='reset'].info:active,
-input[type='submit'].info:active {
+.hover-info:hover, .btn.info:hover, .hover-info:active, .btn.info:active {
   background: #64abea; }
 
 .text-warning {
   color: #c29450; }
 
-.bg-warning, .btn.warning,
-button.warning,
-input[type='button'].warning,
-input[type='reset'].warning,
-input[type='submit'].warning {
+.bg-warning, .btn.warning {
   background: #c9a063; }
 
 .hover-text-warning:hover, .hover-text-warning:active {
   color: #d0ac76; }
 
-.hover-warning:hover, .btn.warning:hover,
-button.warning:hover,
-input[type='button'].warning:hover,
-input[type='reset'].warning:hover,
-input[type='submit'].warning:hover, .hover-warning:active, .btn.warning:active,
-button.warning:active,
-input[type='button'].warning:active,
-input[type='reset'].warning:active,
-input[type='submit'].warning:active {
+.hover-warning:hover, .btn.warning:hover, .hover-warning:active, .btn.warning:active {
   background: #d3b281; }
 
 .text-danger {
   color: #593d3e; }
 
-.bg-danger, .btn.danger,
-button.danger,
-input[type='button'].danger,
-input[type='reset'].danger,
-input[type='submit'].danger {
+.bg-danger, .btn.danger {
   background: #684749; }
 
 .hover-text-danger:hover, .hover-text-danger:active {
   color: #775154; }
 
-.hover-danger:hover, .btn.danger:hover,
-button.danger:hover,
-input[type='button'].danger:hover,
-input[type='reset'].danger:hover,
-input[type='submit'].danger:hover, .hover-danger:active, .btn.danger:active,
-button.danger:active,
-input[type='button'].danger:active,
-input[type='reset'].danger:active,
-input[type='submit'].danger:active {
+.hover-danger:hover, .btn.danger:hover, .hover-danger:active, .btn.danger:active {
   background: #80585a; }
 
 @media (max-width: 63.9375em) {
@@ -1508,11 +1372,7 @@ figure {
   font-size: 13px;
   font-size: 0.8125rem; }
 
-.font-sm, .sub-nav, .btn.sm,
-button.sm,
-input[type='button'].sm,
-input[type='reset'].sm,
-input[type='submit'].sm {
+.font-sm, .sub-nav, .btn.sm {
   font-size: 14px;
   font-size: 0.875rem; }
 
@@ -1520,11 +1380,7 @@ input[type='submit'].sm {
   font-size: 16px;
   font-size: 1rem; }
 
-.font-lg, .btn.lg,
-button.lg,
-input[type='button'].lg,
-input[type='reset'].lg,
-input[type='submit'].lg {
+.font-lg, .btn.lg {
   font-size: 20px;
   font-size: 1.25rem; }
 

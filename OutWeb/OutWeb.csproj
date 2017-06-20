@@ -136,6 +136,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\OnLineController.cs" />
     <Compile Include="Controllers\QandAController.cs" />
@@ -236,6 +237,14 @@
     <Content Include="Views\Contact\Con_Tai_Nan.cshtml" />
     <Content Include="Views\Contact\Con_Zhong_Zheng.cshtml" />
     <Content Include="Views\OnLine\OnLine.cshtml" />
+    <Content Include="Views\Manage\OnLine.cshtml" />
+    <Content Include="Views\Manage\ChangePW.cshtml" />
+    <Content Include="Views\Manage\FAQData.cshtml" />
+    <Content Include="Views\Manage\FAQList.cshtml" />
+    <Content Include="Views\Manage\Login.cshtml" />
+    <Content Include="Views\Manage\NewsData.cshtml" />
+    <Content Include="Views\Manage\NewsList.cshtml" />
+    <Content Include="Views\Shared\_MLayout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
