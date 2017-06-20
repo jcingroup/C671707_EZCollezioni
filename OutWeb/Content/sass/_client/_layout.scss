@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+/*      layout
+-----------------------------------------------------------------------*/
+// 置中(有最大寬度限制,非滿版才需要)
+.wrap {
+    @extend %clearfix;
+
+    max-width: $max-width;
+    margin: 0 auto;
+
+    @include mq-max(break(desktop,-1)) {
+        padding: 0 1.5rem;
+    }
+}
+
+#wrapper {
+    @if $wrapper-bg     { background: $wrapper-bg; }
+    @if not $enable-RWD { min-width: $min-width; }
+    @if $lte7 { _height: 100%; }
+    min-height: 100%;
+    padding-bottom: $footer-height + $wrapper-b-spacing; // 內容與footer間距
+
+    // 本次專案
+    padding-top: $header-height;
+
+    @include mq-max($mobile-menu-bk) {
+        padding-top: $header-mobile-height;
+    }
+}
+
+// header
+// ----------------------------------------------------------------------
+#header {
+    @if $header-bg     { background: $header-bg; }
+    @if $header-height { height: $header-height; }
+    z-index: z(header);
+
+    // 本次專案
+    @include fixed(top 0 right 0 left 0);
+
+    // .scrolled & {
+    //     @include transition(height .5s);
+
+    //     @include mq(break($mobile-menu-bk,+1)) {
+    //         height: 88px;
+    //         .logo {
+    //             margin-top: 36px;
+    //             margin-left: 20px;
+    //             height: 45px;
+    //         }
+    //         .btn-buy { margin-top: 8px; }
+    //         #menu {
+    //             margin-top: 16px;
+    //             a {
+    //                 background: none;
+    //                 padding-top: 0;
+    //                 color: #555;
+    //                 &:hover, &:active, &.current { color: #000; }
+    //             }
+    //         }
+    //     }
+    //     @include mq-max($mobile-menu-bk) {
+    //         height: $header-mobile-height - 25;
+
+    //         .logo {
+    //             height: $header-mobile-height - 45;
+    //         }
+    //     }
+    // }
+
+    // @include mq-max($mobile-menu-bk) {
+    //     border-top: 10px solid #000;
+    //     height: $header-mobile-height;
+    // }
+}
+
+.logo {
+    cursor: pointer; cursor: hand; // for ie
+    z-index: z(logo);
+
+    @if $logo-img {
+        @include text-pic($logo-img, nth($logo-size,1), nth($logo-size,2));
+    }
+
+    // 本次專案
+    @extend %float-l;
+    margin-top: 14px;
+    margin-left: 88px;
+}
+
+
+// footer 頁腳
+// ----------------------------------------------------------------------
+#footer {
+    @if $footer-bg { background: $footer-bg; }
+    @if $footer-color { color: $footer-color; }
+    min-height: $footer-height;
+    margin-top: -($footer-height);
+    z-index: z(footer);
+
+    // 本次專案
+    @extend %clearfix, .p-t-24, .p-b-16, .text-white, .font-tiny;
+    text-align: left;
+    position: relative;
+
+    a {
+        @extend .text-white;
+
+        &:hover, &:active {
+            color: lighten($brand-primary,20);
+        }
+    }
+}
+
+.foot-nav, .foot-contact {
+    @include mq(desktop) {
+        float: left;
+        width: 37.5%;
+    }
+}
+.foot-nav {
+    margin-bottom: 38px;
+
+    @include mq-max(mobile) {
+        margin-bottom: 0;
+    }
+
+    a {
+        display: block;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+}
+
+.foot-contact {
+    line-height: 1.8;
+
+    .underline {
+        border-color: #fff;
+        margin-bottom: 8px;
+    }
+    dd {
+        @extend .p-l-0;
+    }
+}
+
+.copyright {
+    @include mq(desktop) {
+        float: right;
+        vertical-align: top;
+    }
+    p {
+        margin-top: 30px;
+    }
+}
+.logo-s, .btn-fb {
+    margin-left: 45px;
+}
+.logo-s {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    @include text-pic('logo-s.gif', 181px, 65px);
+}
+.btn-fb {
+    display: block;
+    @include text-pic('btn-fb.gif', 58px, 27px);
+    @include transition(.3s);
+    &:hover, &:active {
+        background-image: url('../images/btn-fb2.gif');
+    }
+}

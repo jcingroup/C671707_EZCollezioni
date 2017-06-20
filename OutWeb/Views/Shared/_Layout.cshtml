@@ -6,8 +6,10 @@
     @* <meta name="viewport" content="width=device-width, initial-scale=1.0"> *@
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>@ViewBag.Title - 長興法律事務所</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title - ElegaZzle Collezioni EZ西服</title>
+    <link rel="stylesheet" href="~/Content/css/vendor/open-iconic.css">
+    <link rel="stylesheet" href="~/Content/css/grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
 @if (ViewBag.IsFirstPage)
 {
     <link rel="stylesheet" href="~/Content/css/index.css">
@@ -16,21 +18,42 @@ else
 {
     <link rel="stylesheet" href="~/Content/css/page.css">
 }
-    @RenderSection("Styles", false)
+    @RenderSection("css", false)
 </head>
 <body class="@ViewBag.BodyClass">
     <div id="wrapper">
         <header id="header">
-            <h1 class="logo" onclick="location.href='@Url.Content("~/Home")'" title="回首頁" tabindex="-1">
-                長興法律事務所
-            </h1>
-            <nav id="menu" class="navbar">
-                @Html.ActionLink("簡介", "AboutUs", "Home", null, (ViewBag.BodyClass == "AboutUs") ? new { @class = "current" } : new { @class = "" })
-                @Html.ActionLink("專業團隊", "Lawyers", "Home", null, (ViewBag.BodyClass == "Lawyers") ? new { @class = "current" } : new { @class = "" })
-                @Html.ActionLink("專業領域", "Service", "Home", null, (ViewBag.BodyClass == "Service") ? new { @class = "current" } : new { @class = "" })
-                <a href="https://lawyer4518.blogspot.tw/" target="new">BLOG</a>
-                @Html.ActionLink("連絡我們", "ContactUs", "Home", null, (ViewBag.BodyClass == "ContactUs") ? new { @class = "current" } : new { @class = "" })
-            </nav>
+            <div class="wrap">
+                <h1 class="logo" onclick="location.href='@Url.Content("~/Home")'" title="回首頁" tabindex="-1">
+                    ElegaZzle Collezioni EZ西服
+                </h1>
+                <ul id="menu" class="navbar list-inline">
+                    <li><a href="~/Home/About" class="@(ViewBag.BodyClass == "About" ? "current" : "")">品牌故事</a></li>
+                    @* <li><a href="~/Home/Gallery" class="@(ViewBag.BodyClass == "Gallery" ? "current" : "")">EZ Gallery</a></li> *@
+                    <li><a href="~/Home/Show_S1" class="@(ViewBag.BodyClass == "Show_S1" ? "current" : "")">男士精品</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle @(ViewBag.BodyClass == "Stores" ? "current" : "")">門市資訊</a>
+                        <nav class="sub-nav">
+                            <a href="~/Contact/Taipei_concept" class="@(ViewBag.BodyClass == "store_taipei" ? "current" : "")">台北形象概念店</a>
+                            <a href="~/Contact/Con_Xi_Men" class="@(ViewBag.BodyClass == "store_ximen" ? "current" : "")">台北西門店</a>
+                            <a href="~/Contact/Con_Guang_Fu" class="@(ViewBag.BodyClass == "store_guangfu" ? "current" : "")">台北光復店</a>
+                            <a href="~/Contact/Con_Tao_Yuan" class="@(ViewBag.BodyClass == "store_taoyuan" ? "current" : "")">桃園復興店</a>
+                            <a href="~/Contact/Hsin_chu_concept" class="@(ViewBag.BodyClass == "store_chuconcept" ? "current" : "")">新竹形象概念店</a>
+                            <a href="~/Contact/Con_Hsin_Chu" class="@(ViewBag.BodyClass == "store_hsinchu" ? "current" : "")">新竹中華店</a>
+                            <a href="~/Contact/Con_San_Min" class="@(ViewBag.BodyClass == "store_sanmin" ? "current" : "")">台中英才店</a>
+                            <a href="~/Contact/Con_Tai_Nan" class="@(ViewBag.BodyClass == "store_tainan" ? "current" : "")">台南中正店</a>
+                            <a href="~/Contact/Con_Zhong_Zheng" class="@(ViewBag.BodyClass == "store_zhongzheng" ? "current" : "")">高雄中正店</a>
+                        </nav>
+                    </li>
+                    <li><a href="~/Home/Flow" class="@(ViewBag.BodyClass == "Flow" ? "current" : "")">訂製流程</a></li>
+                    <li class="dropdown">
+                        <a href="~/Home/Service" class="dropdown-toggle @(ViewBag.BodyClass == "Service" ? "current" : "")">客戶服務</a>
+                        <nav class="sub-nav">
+                            <a href="~/QandA" class="@(ViewBag.BodyClass == "QandA" ? "current" : "")">常見問題</a>
+                        </nav>
+                    </li>
+                </ul>
+            </div>
         </header>
 
         @RenderBody()
@@ -40,64 +63,62 @@ else
     <a href="#header" class="goTop oi" data-glyph="chevron-top" title="TOP"></a>
 
     <footer id="footer">
-        <section class="slogan">講實理．求實材而重實用</section>
-        <section class="foot-contact row row-x-0">
-            <h1 class="logo-s">長興法律事務所</h1>
-            <article class="col-md-11 offset-md-1">
-                <p class="col-md-4"></p>
-                <ul class="list-unstyled col-md-4">
-                    <li><em>T</em>886-3-4222325</li>
-                    <li><em>F</em>886-3-4250813</li>
-                    <li><em>E</em>lawyer@chini.idv.tw</li>
-                </ul>
-            </article>
-            <hr>
-            <article class="col-md-11 offset-1">
-                <nav class="foot-menu col-md-4">
-                    @Html.ActionLink("簡介", "AboutUs", "Home", null, (ViewBag.BodyClass == "AboutUs") ? new { @class = "current" } : new { @class = "" })
-                    @Html.ActionLink("專業團隊", "Lawyers", "Home", null, (ViewBag.BodyClass == "Lawyers") ? new { @class = "current" } : new { @class = "" })
-                    @Html.ActionLink("專業領域", "Service", "Home", null, (ViewBag.BodyClass == "Service") ? new { @class = "current" } : new { @class = "" })
-                    <a href="https://lawyer4518.blogspot.tw/" target="new">BLOG</a>
-                    @Html.ActionLink("連絡我們", "ContactUs", "Home", null, (ViewBag.BodyClass == "ContactUs") ? new { @class = "current" } : new { @class = "" })
-                </nav>
-                <nav class="foot-lawer col-md-4">
-                    <a href="~/Home/Lawyers#p1" class="scroll">呂理胡</a>
-                    <a href="~/Home/Lawyers#p2" class="scroll">唐永洪</a>
-                    <a href="~/Home/Lawyers#p3" class="scroll">張晶瑩</a>
-                    <a href="~/Home/Lawyers#p4" class="scroll">楊雅馨</a>
-                    <a href="~/Home/Lawyers#p5" class="scroll">呂浩瑋</a>
-                </nav>
-            </article>
-        </section>
-        <div class="copyright">&copy; 2008 - @DateTime.Now.Year CHINI LAW FIRM</div>
+        <div class="wrap row-x-0">
+            <nav class="foot-nav row-x-0">
+                <div class="col-md-4">
+                    <a href="~/Home/About" class="@(ViewBag.BodyClass == "About" ? "current" : "")">品牌故事</a>
+                    <a href="~/Home/Best_choice" class="@(ViewBag.BodyClass == "Best_choice" ? "current" : "")">選擇EZ的10大理由</a>
+                    <a href="~/Home/Flow" class="@(ViewBag.BodyClass == "Flow" ? "current" : "")">訂製流程</a>
+                    <a href="~/Home/TieKnot" class="@(ViewBag.BodyClass == "TieKnot" ? "current" : "")">領帶的打法</a>
+                    <a href="~/Home/Maintain" class="@(ViewBag.BodyClass == "Maintain" ? "current" : "")">西服保養技巧</a>
+                </div>
+                <div class="col-md-4">
+                    @* <a href="~/Home/Gallery" class="@(ViewBag.BodyClass == "Gallery" ? "current" : "")">EZ Gallery</a> *@
+                    <a href="~/Home/Show_S1" class="@(ViewBag.BodyClass == "Show_S1" ? "current" : "")">男士精品</a>
+                    <a href="~/Home/Wedding" class="@(ViewBag.BodyClass == "Wedding" ? "current" : "")">新婚賀禮大方送</a>
+                    <a href="~/Home/Event" class="@(ViewBag.BodyClass == "Event" ? "current" : "")">滿額禮優惠活動</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="~/News" class="@(ViewBag.BodyClass == "News" ? "current" : "")">最新消息</a>
+                    <a href="~/QandA" class="@(ViewBag.BodyClass == "QandA" ? "current" : "")">常見問題</a>
+                    <a href="~/OnLine" class="@(ViewBag.BodyClass == "OnLine" ? "current" : "")">線上諮詢</a>
+                </div>
+            </nav>
+            <dl class="foot-contact row-x-0">
+                <dt class="underline">門市資訊：</dt>
+                <dd class="col-md-6">
+                    台北形象概念店/ (02)2711-0033<br> @* new *@
+                    台北西門店/ (02)2375-1000<br>
+                    台北光復店/ (02)2778-3356<br>
+                    桃園復興店/ (03)336-6090<br>
+                    新竹形象概念店/ (03)515-3555<br> @* new *@
+                    新竹中華店/ (03)532-5555
+                </dd>
+                <dd class="col-md-6">
+                    台中英才店/ (04)2322-0008<br>
+                    台南中正店/ (06)220-3311<br>
+                    高雄中正店/ (07)238-2887
+                </dd>
+            </dl>
+            <div class="copyright">
+                <h5 class="logo-s">ElegaZzle Collezioni EZ西服</h5>
+                <a href="" class="btn-fb">Facebook</a>
+                <p>&copy; 2002 - @DateTime.Now.Year 衣立實業有限公司 <a href="~/Home/Copyright">版權聲明</a></p>
+            </div>
+        </div>
     </footer><!-- footer //-->
 
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="~/Content/js/jquery.waypoints.min.js"></script>
     <script>
-        var $gotoTop = $('.goTop');
-        var $sticky = $('#header'),
-            stickyOffset = $sticky.offset().top;
-
-        $(window).scroll(function () {
-            var scrollTop = $(this).scrollTop();
-
-            // 沒有卷軸時不出現 goTop 按鈕
-            if (scrollTop > 100) { $gotoTop.fadeIn(); }
-            else { $gotoTop.fadeOut(); }
-
-            // 黏住效果
-            if (scrollTop > stickyOffset) { $sticky.addClass('stick'); }
-            else { $sticky.removeClass('stick'); }
-            $('#wrapper').css('padding-top', $sticky.height());
-
-            // for大螢幕
-            if (window.innerWidth >= 1024) { $sticky.css('top', scrollTop); }
-            else { $sticky.removeAttr('style'); }
-        });
-        $(window).resize(function () {
-            if (window.innerWidth >= 1024) { $sticky.css('top', $(window).scrollTop()); }
-            else { $sticky.removeAttr('style'); }
-        });
+        $('#header').waypoint(function(direction) {
+            if( direction === 'down' ) {
+                $('body').addClass('scrolled');
+            }
+            else if( direction === 'up' ){
+                $('body').removeClass('scrolled');
+            }
+        }, { offset: '-1px' } );
 
         // 點選後跳到 href 指向的位置
         $('.scroll').click(function () {
@@ -107,7 +128,7 @@ else
             }, 750);
             return false;
         });
-        $gotoTop.click(function () {
+        $('.goTop').click(function () {
             $('body, html').stop(true).animate({ scrollTop: 0 }, 800);
             return false;
         });

@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+// 本頁專用變數(覆蓋)
+// ------------------------------------------------------------
+$isPage:                 true;
+
+$p-spacer:               .5rem;
+$headings-line-height:   1.5;
+
+// import
+// ------------------------------------------------------------
+// 本次專案專用變數
+@import "_client/settings";
+
+// 共用
+@import "core/function";
+@import "core/variables";
+@import "core/mixins";
+
+// 由此 output css
+@import "vendor/print";     // 列印樣式
+
+@import "core/util";
+@import "unit/base";
+@import "unit/link";
+@import "unit/typography";
+@import "unit/list";
+
+// 本頁專用
+@import "_client/layout";
+@import "_client/form";
+@import "_client/table";
+@import "_client/nav";
+
+@import "unit/btn";
+@import "unit/goTop";
+@import "unit/fields";
+@import "unit/input-choiceBoxs";
+@import "unit/input-group";
+@import "unit/modal";
+@import "unit/classes"; // 建議放置在最後一個
+
+@import "_client/custom";
+
+
+// main
+// ------------------------------------------------------------
+.main {
+    @extend .m-x-a;
+    max-width: 1020px;
+    padding-top: 45px;
+}
+
+.title {
+    @extend .bg-muted, .text-left;
+
+    @include mq(desktop) {
+        height: 380px;
+
+        img {
+            float: right;
+            height: 100%;
+        }
+    }
+
+    h1 {
+        margin-left: 90px;
+        // padding-top: 100px;
+        @include transform(translateY(100px));
+    }
+    strong {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        display: block;
+    }
+}
+
+// == 最新消息&常見問題list
+.content-list {
+    border-bottom: 3px solid #999;
+
+    &:not(:last-child) {
+        margin-bottom: 62px;
+    }
+
+    header {
+        @extend .text-primary, .p-y-12;
+        border-top: 1px solid #777;
+        border-bottom: 1px solid #777;
+        font-size: em(27);
+        line-height: 1.2;
+    }
+    main {
+        @extend .font-lg, .p-x-48, .p-y-24;
+        line-height: 1.65;
+        // padding: 24px 56px;
+    }
+    .date {
+        @extend .text-secondary;
+    }
+}
+
+// == 線上諮詢
+.contact-form {
+    main {
+        background: #f1edea;
+        padding: 50px 0;
+        margin-bottom: 50px;
+
+        @include mq-max (break(desktop,-1)) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}

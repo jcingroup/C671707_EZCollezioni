@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+// output
+// ------------------------------------------------------------
+// == 主選單
+.navbar {
+    @if $navbar-height { height: $navbar-height }
+    @if $navbar-bg     { background: $navbar-bg }
+}
+
+#menu {
+    z-index: z(menu);
+
+    // 本次專案
+    margin-bottom: 0;
+    @include mq(break($mobile-menu-bk,+1)) {
+        float: right;
+        margin-top: 48px;
+    }
+
+    #{$nav-root} {
+        @if $nav-color     { color: $nav-color; }
+        @if $nav-font-size { font-size: em($nav-font-size); }
+        @if $nav-height {
+            height: if($nav-height == 'full', 100%, $nav-height);
+            @if $nav-height == 'full' {
+                @include text-middle($navbar-height);
+            }
+        }
+        @extend .p-r-16, .p-b-16;
+    }
+
+    // 本次專案 - for all a
+    a {
+        @extend .hover-text-primary;
+        display: block;
+    }
+}
+
+// == sub-nav
+@if $sub-nav-has {
+    #menu {
+        li {
+            @extend .m-l-12;
+            position: relative;
+            vertical-align: top;
+
+            // 子選單顯示
+            &:hover, &:active {
+                .sub-nav {
+                    opacity: 1;
+                    visibility: visible;
+
+                    // 本次專案
+                    height: auto;
+                    top: 100%;
+                }
+            }
+        }
+
+        // 有下拉選單的加箭頭
+        // .caret {
+        //     @include el(before) {
+        //         @include arrow(up, 10px, 7px, #fff);
+        //         @include pos-center(x);
+        //         @include transition(opacity .5s, bottom .3s);
+        //         opacity: 0;
+        //         bottom: -8px;
+        //     }
+        // }
+    }
+    .sub-nav {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+
+        // 本次專案
+        @extend .text-left, .font-sm;
+        @include transition(opacity .5s, top .35s);
+        @include absolute(top 0 left 0);
+
+        background: rgba(#fff,.7);
+        padding: 15px 20px 15px 12px;
+        word-break: keep-all;
+
+        a {
+            color: #434343;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        @if $enable-RWD {
+            @include mq-max(break(#{$mobile-menu-bk},-1)) {
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                position: static;
+                top: 100%;
+                max-width: 100%;
+
+                @if $mobile-menu-bg {
+                    background: darken($mobile-menu-bg,10);
+                }
+                box-shadow: inset 3px 6px 15px rgba(#000,.5);
+            }
+        }
+    }
+}
+
+// == mobile-nav
+@if $enable-RWD {
+    // 行動版面的選單
+    @include mobile-nav('.navbar', $mobile-menu-bk) {
+        top: $header-mobile-height;
+        overflow-y: auto;
+
+        .stick & { top: $header-mobile-height - 25; }
+
+        nav, .btn-buy, .shopping-cart {
+            width: 100%;
+        }
+        #menu a, .mobile-nav, .cart-toggle {
+            display: block;
+            padding: 15px 0 15px 47%;
+            text-align: left;
+            font-size: em(20);
+            font-weight: 550;
+            color: #7d7d7d;
+            background: url(#{$img-path}/mobile-nav-icon.png) 30% 10px no-repeat, #fff url(#{$img-path}/mobile-nav-bg.gif) 0 bottom repeat-x;
+
+            &:hover, &:active {
+                background-color: $muted !important;
+                background-image: url(#{$img-path}/mobile-nav-icon.png);
+                background-repeat: no-repeat;
+                background-position: 30% 10px;
+                color: #fff;
+            }
+            &.current { color: #000; }
+        }
+        .cart-toggle {
+            width: 100%;
+            background: url(#{$img-path}/mobile-nav-icon.png) 30% -50px no-repeat, #fff url(#{$img-path}/mobile-nav-bg.gif) 0 bottom repeat-x;
+            &:hover, &:active { background-position: 30% -50px; }
+        }
+        #menu a {
+            &:nth-child(1) {
+                background: url(#{$img-path}/mobile-nav-icon.png) 30% -115px no-repeat, #fff url(#{$img-path}/mobile-nav-bg.gif) 0 bottom repeat-x;
+                &:hover, &:active { background-position: 30% -115px; }
+            }
+            &:nth-child(2) {
+                background: url(#{$img-path}/mobile-nav-icon.png) 30% -175px no-repeat, #fff url(#{$img-path}/mobile-nav-bg.gif) 0 bottom repeat-x;
+                &:hover, &:active { background-position: 30% -175px; }
+            }
+            &:nth-child(3) {
+                background: url(#{$img-path}/mobile-nav-icon.png) 30% -235px no-repeat, #fff url(#{$img-path}/mobile-nav-bg.gif) 0 bottom repeat-x;
+                &:hover, &:active { background-position: 30% -235px; }
+            }
+            &:nth-child(4) {
+                background: url(#{$img-path}/mobile-nav-icon.png) 30% -295px no-repeat, #fff url(#{$img-path}/mobile-nav-bg.gif) 0 bottom repeat-x;
+                &:hover, &:active { background-position: 30% -295px; }
+            }
+        }
+        .btn-buy {
+            padding-top: 18px;
+            padding-bottom: 18px;
+            letter-spacing: 5px;
+            font-size: em(23);
+            border-radius: 0;
+            border-top: 1px solid #fff;
+            background: #ffa956 url(#{$img-path}/mobile-btn-buy.gif) 0 bottom repeat-x;
+        }
+        .mobile-nav-hide { display: none !important; }
+    }
+
+    @include mq-max(mobile) {
+        .navbar {
+            #menu a, .mobile-nav, .cart-toggle {
+                font-size: em(15);
+            }
+        }
+    }
+
+    %mobile-btn {
+        background: none;
+        border: none;
+        outline: none;
+        padding: 0;
+        @include transition(all .3s);
+    }
+
+    // 顯示行動版面的按鈕
+    .mobile-toggle {
+        display: none;
+
+        @include mq-max($mobile-menu-bk) {
+            display: block;
+
+            .stick & {
+                font-size: em($header-mobile-height*0.42);
+            }
+        }
+
+        // 本次專案
+        @extend %mobile-btn, %float-r;
+        color: #dcdcdc;
+        font-size: em($header-mobile-height*0.56);
+        line-height: 1;
+        margin-right: 18px;
+        margin-top: 6px;
+
+        &:hover, &:active { color: lighten($brand-primary, 10); }
+
+        &::before { content: '\e09b'; }
+
+        &.active {
+            font-size: em($header-mobile-height*0.45);
+            color: $danger;
+            &::before { content: '\e0db'; }
+        }
+    }
+
+    // 關閉行動版面的按鈕
+    @if $mobile-close {
+        .#{$mobile-close} {
+            display: none;
+
+            .#{$mobile-menu-style} & {
+                @extend %mobile-btn, .text-primary;
+
+                @include absolute(right 2.5% top 1%);
+
+                display: block;
+                font-size: em(40);
+
+                &:hover, &:active {
+                    color: lighten($brand-primary,10);
+                }
+            }
+        }
+    }
+}

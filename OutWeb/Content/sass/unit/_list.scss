@@ -1,0 +1,22 @@
+﻿@charset "UTF-8";
+
+$list-dot-color: $brand-primary;
+
+// list
+// ------------------------------------------------------------
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 0;
+
+    ol, ul, dl {
+        font-size: 90%;
+        margin: 1.5rem 0 1.5rem 3.0rem
+    }
+}
+dd {
+    margin-left: 0; // Undo browser default
+}
+
+.list-unstyled { @extend %list-unstyled; }
+.list-inline   { @extend %list-inline; }

@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+$isAdmin:        true;
+$blue-grey:      #607D8B;
+
+// import
+// ------------------------------------------------------------
+@import "_admin/settings"; // 本次專案專用變數
+
+// 共用
+@import "core/function";
+@import "core/variables";
+@import "core/mixins";
+
+// 由此 output css
+@import "vendor/print";     // 列印樣式
+
+// basic
+@import "unit/base";
+@import "unit/link";
+@import "unit/typography";
+@import "unit/list";
+@import "unit/btn";
+@import "core/util";
+
+// 本頁專用
+@import "_admin/layout";
+@import "_admin/table";
+@import "_admin/form";
+@import "_admin/nav";
+
+@import "unit/btn";
+@import "unit/btn-group";
+@import "unit/fields";
+@import "unit/input-group";
+@import "unit/input-choiceBoxs";
+@import "unit/label";
+@import "unit/alerts";
+@import "unit/loader";
+@import "unit/modal";
+@import "unit/classes"; // 建議放置在最後一個
+
+@import "_admin/custom";
+
+
+// main
+// ------------------------------------------------------------
+.breadcrumb {
+    @extend %list-inline, .font-md;
+    // z-index: z(dropdown) - 1;
+
+    background: #ECEEEF;
+    border-bottom: 1px solid darken(#ECEEEF,5);
+    height: $sidebar-title-height;
+    line-height: $sidebar-title-height;
+    padding-left: $gutter;
+
+    @include fixed(left $sidebar-width right 0 top $header-height);
+}
+
+// == 列表
+// 上方按鈕欄(新增,下載彙總表等)
+.topBtn-bar {
+    @extend .m-b-8;
+}
+
+// 列表上的搜尋
+.table-head {
+    @extend .p-a-8, .text-muted;
+    background: lighten($table-border-color,2);
+
+    * { vertical-align: middle; }
+
+    input, select {
+        @extend .m-r-8;
+        font-size: em(14);
+        line-height: 14px*1.2;
+        height: 14px*1.2;
+    }
+    label { @extend .m-r-2, .m-b-0, .font-sm; }
+
+    .form-inline {
+        &:not(:last-child) { @extend .m-b-8; }
+    }
+    .btn { @extend .p-y-4; }
+}
+.table-list {
+    @extend %full, .m-b-0, .table-bordered;
+
+    caption {
+        @extend .text-left, .p-a-8;
+        background: #F2F7FA;
+        color: #818A91;
+        font-size: em(19);
+    }
+    th {
+        background: lighten($blue-grey,34); //mix(lighten($muted,30),$light-blue)
+        line-height: 1.4;
+        font-weight: normal;
+        border-bottom: 2px solid $table-border-color;
+        word-break: keep-all;
+    }
+    .item-edit {
+        width: 55px;
+
+        .btn-link { font-size: em(18); }
+    }
+    .sum {
+        td {
+            background: mix(lighten($warning,30),$pale-yellow) !important;
+        }
+    }
+}
+// 點選排序
+.th-sort-toggle {
+    @extend .p-a-0, .p-r-12;
+    display: block;
+    width: 100%;
+    height: 17px;
+    position: relative;
+
+    @include transition(color, .3s);
+
+    &:hover { color: darken($brand-primary,10); }
+
+    @include el(all) {
+        @include absolute(right 0);
+        border: 4px solid transparent;
+    }
+    &::before {
+        top: 0;
+        border-top-width: 2px;
+        border-bottom: 6px solid hsla(0,0,0,.35);
+    }
+    &::after {
+        bottom: 0;
+        border-bottom-width: 2px;
+        border-top: 6px solid hsla(0,0,0,.35);
+    }
+    &.asc {
+        &::before { border-bottom-color: $link-color; }
+        &::after { border-top-color: hsla(0,0,0,0.1); }
+    }
+    &.desc {
+        &::after { border-top-color: $link-color; }
+        &::before { border-bottom-color: hsla(0,0,0,0.1); }
+    }
+}
+
+// 列表頁腳 pager
+.table-foot {
+    padding: 6px;
+    background: lighten($table-border-color,4);
+}
+.pager {
+    @extend %clearfix, .font-sm, .text-center;
+
+    input, button { line-height: 20px; }
+    button {
+        @extend .p-x-2;
+        margin: 0 1px;
+        border: 1px solid lighten($input-border-color,5);
+
+        &[disabled] {
+            color: darken($muted,5);
+        }
+        &:not([disabled]) {
+            @extend .bg-white;
+            color: darken($input-border-color,10);
+
+            &:hover, &:active {
+                background: #eee;
+            }
+        }
+    }
+    span { @extend .m-x-8; }
+    input { @extend .m-x-4; }
+}
+
+// == 表單
+.form-list {
+    @extend .p-b-32;
+
+    // 分段小標
+    legend {
+        font-size: em(19);
+        line-height: 1.8;
+
+        &.underline {
+            border-bottom: 1px dashed lighten($muted,31);
+        }
+    }
+}
+// 按鈕bar
+.submit-bar {
+    @extend .p-y-12;
+    border-top: 2px solid darken($table-border-color,3.5);
+    background: lighten($table-border-color,4);
+    padding-left: 9%;
+
+    .btn {
+        &:not(:last-child) { @extend .m-r-8; }
+    }
+}
+
+// == 檔案上傳
+.input-file {
+    @extend .form-element, .m-b-12;
+    @include text-overflow(false);
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 0;
+
+    &:hover {
+        border-color: lighten($btn-bg,15);
+
+        strong { background-color: $btn-hover-bg; }
+    }
+
+    label, strong {
+        padding: 0 $input-height*0.2;
+        cursor: pointer;
+    }
+    label {
+        @include text-overflow(100%);
+
+        min-height: $input-height;
+        vertical-align: top;
+        margin-bottom: 0;
+    }
+    strong {
+        @extend %float-r;
+        display: inline-block;
+        height: 100%;
+        color: #fff;
+        font-weight: normal;
+        background-color: $btn-bg;
+    }
+}
+
+// 已上傳檔案樣式
+.uploaded {
+    @extend %float-l, .font-tiny;
+    position: relative;
+    margin-top: 6px;
+    border: 1px solid #eee;
+    padding: 5px;
+    color: #aaa;
+
+    // 純文字
+    a { margin-right: 20px; }
+
+    button {
+        @include absolute(right -2px top -2px);
+        opacity: .7;
+    }
+}
