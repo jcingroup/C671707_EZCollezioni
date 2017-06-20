@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Work.WebProj</RootNamespace>
-    <AssemblyName>Work.WebProj</AssemblyName>
+    <RootNamespace>OutWeb</RootNamespace>
+    <AssemblyName>OutWeb</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -160,6 +160,7 @@
     <Content Include="Content\images\banner-news.jpg" />
     <Content Include="Content\images\btn-fb.gif" />
     <Content Include="Content\images\btn-fb2.gif" />
+    <Content Include="Content\images\icon-word.jpg" />
     <Content Include="Content\images\index\activity1.jpg" />
     <Content Include="Content\images\index\activity2.jpg" />
     <Content Include="Content\images\index\banner1.jpg" />

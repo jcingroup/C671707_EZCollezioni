@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Work.WebProj.Controllers
+namespace OutWeb.Controllers
 {
     public class NewsController : Controller
     {
