@@ -255,3 +255,4 @@ ModelManifest.xml
 
 **/Scripts/**/*.map
 **/logs/**/*.txt
+**/Content/sass/
