@@ -246,6 +246,7 @@
     <Content Include="Views\Manage\NewsData.cshtml" />
     <Content Include="Views\Manage\NewsList.cshtml" />
     <Content Include="Views\Shared\_MLayout.cshtml" />
+    <Content Include="Views\Home\Copyright.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -790,11 +790,6 @@ img {
 .hover-danger:hover, .hover-danger:active {
   background: #80585a; }
 
-@media (max-width: 63.9375em) {
-  .mobile-hide {
-    display: none;
-    visibility: hidden; } }
-
 body {
   padding: 10px 15px;
   height: auto; }

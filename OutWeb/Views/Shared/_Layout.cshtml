@@ -32,24 +32,24 @@ else
                     @* <li><a href="~/Home/Gallery" class="@(ViewBag.BodyClass == "Gallery" ? "current" : "")">EZ Gallery</a></li> *@
                     <li><a href="~/Home/Show_S1" class="@(ViewBag.BodyClass == "Show_S1" ? "current" : "")">男士精品</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle @(ViewBag.BodyClass == "Stores" ? "current" : "")">門市資訊</a>
+                        <a href="~/Contact" class="dropdown-toggle @(ViewBag.BodyClass == "Stores" ? "current" : "")">門市資訊</a>
                         <nav class="sub-nav">
-                            <a href="~/Contact/Taipei_concept" class="@(ViewBag.BodyClass == "store_taipei" ? "current" : "")">台北形象概念店</a>
-                            <a href="~/Contact/Con_Xi_Men" class="@(ViewBag.BodyClass == "store_ximen" ? "current" : "")">台北西門店</a>
-                            <a href="~/Contact/Con_Guang_Fu" class="@(ViewBag.BodyClass == "store_guangfu" ? "current" : "")">台北光復店</a>
-                            <a href="~/Contact/Con_Tao_Yuan" class="@(ViewBag.BodyClass == "store_taoyuan" ? "current" : "")">桃園復興店</a>
-                            <a href="~/Contact/Hsin_chu_concept" class="@(ViewBag.BodyClass == "store_chuconcept" ? "current" : "")">新竹形象概念店</a>
-                            <a href="~/Contact/Con_Hsin_Chu" class="@(ViewBag.BodyClass == "store_hsinchu" ? "current" : "")">新竹中華店</a>
-                            <a href="~/Contact/Con_San_Min" class="@(ViewBag.BodyClass == "store_sanmin" ? "current" : "")">台中英才店</a>
-                            <a href="~/Contact/Con_Tai_Nan" class="@(ViewBag.BodyClass == "store_tainan" ? "current" : "")">台南中正店</a>
-                            <a href="~/Contact/Con_Zhong_Zheng" class="@(ViewBag.BodyClass == "store_zhongzheng" ? "current" : "")">高雄中正店</a>
+                            <a href="~/Contact/Taipei_concept" class="@(ViewBag.subnav == "store_taipeiC" ? "current" : "")">台北形象概念店</a>
+                            <a href="~/Contact/Con_Xi_Men" class="@(ViewBag.subnav == "store_ximen" ? "current" : "")">台北西門店</a>
+                            <a href="~/Contact/Con_Guang_Fu" class="@(ViewBag.subnav == "store_guangfu" ? "current" : "")">台北光復店</a>
+                            <a href="~/Contact/Con_Tao_Yuan" class="@(ViewBag.subnav == "store_taoyuan" ? "current" : "")">桃園復興店</a>
+                            <a href="~/Contact/Hsin_chu_concept" class="@(ViewBag.subnav == "store_hsinchuC" ? "current" : "")">新竹形象概念店</a>
+                            <a href="~/Contact/Con_Hsin_Chu" class="@(ViewBag.subnav == "store_hsinchu" ? "current" : "")">新竹中華店</a>
+                            <a href="~/Contact/Con_San_Min" class="@(ViewBag.subnav == "store_sanmin" ? "current" : "")">台中英才店</a>
+                            <a href="~/Contact/Con_Tai_Nan" class="@(ViewBag.subnav == "store_tainan" ? "current" : "")">台南中正店</a>
+                            <a href="~/Contact/Con_Zhong_Zheng" class="@(ViewBag.subnav == "store_zhongzheng" ? "current" : "")">高雄中正店</a>
                         </nav>
                     </li>
                     <li><a href="~/Home/Flow" class="@(ViewBag.BodyClass == "Flow" ? "current" : "")">訂製流程</a></li>
                     <li class="dropdown">
                         <a href="~/Home/Service" class="dropdown-toggle @(ViewBag.BodyClass == "Service" ? "current" : "")">客戶服務</a>
                         <nav class="sub-nav">
-                            <a href="~/QandA" class="@(ViewBag.BodyClass == "QandA" ? "current" : "")">常見問題</a>
+                            <a href="~/QandA" class="@(ViewBag.subnav == "QandA" ? "current" : "")">常見問題</a>
                         </nav>
                     </li>
                 </ul>
@@ -80,7 +80,7 @@ else
                 </div>
                 <div class="col-md-4">
                     <a href="~/News" class="@(ViewBag.BodyClass == "News" ? "current" : "")">最新消息</a>
-                    <a href="~/QandA" class="@(ViewBag.BodyClass == "QandA" ? "current" : "")">常見問題</a>
+                    <a href="~/QandA" class="@(ViewBag.subnav == "QandA" ? "current" : "")">常見問題</a>
                     <a href="~/OnLine" class="@(ViewBag.BodyClass == "OnLine" ? "current" : "")">線上諮詢</a>
                 </div>
             </nav>
@@ -102,7 +102,7 @@ else
             </dl>
             <div class="copyright">
                 <h5 class="logo-s">ElegaZzle Collezioni EZ西服</h5>
-                <a href="" class="btn-fb">Facebook</a>
+                <a href="https://www.facebook.com/EZ.Suit/" target="new" class="btn-fb">Facebook</a>
                 <p>&copy; 2002 - @DateTime.Now.Year 衣立實業有限公司 <a href="~/Home/Copyright">版權聲明</a></p>
             </div>
         </div>
@@ -111,12 +111,14 @@ else
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="~/Content/js/jquery.waypoints.min.js"></script>
     <script>
-        $('#header').waypoint(function(direction) {
+        $('body').waypoint(function(direction) {
             if( direction === 'down' ) {
                 $('body').addClass('scrolled');
+                $('.goTop').fadeIn();
             }
             else if( direction === 'up' ){
                 $('body').removeClass('scrolled');
+                $('.goTop').fadeOut();
             }
         }, { offset: '-1px' } );
 

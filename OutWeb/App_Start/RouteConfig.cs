@@ -13,18 +13,18 @@ namespace OutWeb
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // 後台
+            routes.MapRoute(
+                name: "Manager",
+                url: "_SysAdm",
+                defaults: new { controller = "Manage", action = "Login" }
+            ).DataTokens["UseNamespaceFallback"] = false;
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
-            // 後台
-            routes.MapRoute(
-                name: "Manage",
-                url: "_SysAdm",
-                defaults: new { controller = "Manage", action = "Login" }
-            ).DataTokens["UseNamespaceFallback"] = false;
         }
     }
 }

@@ -14,9 +14,8 @@ namespace OutWeb.Controllers
         }
 
         // GET: Manage
-        public ActionResult Index()
-        {
-            ViewBag.IsFirstPage = true;
+        public ActionResult Index()        {
+            
             return View("Login");
         }
 

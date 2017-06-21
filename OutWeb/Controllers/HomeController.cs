@@ -69,5 +69,11 @@ namespace OutWeb.Controllers
         {
             return View();
         }
+
+        // 版權聲明
+        public ActionResult Copyright()
+        {
+            return View();
+        }
     }
 }

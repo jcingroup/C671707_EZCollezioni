@@ -37,7 +37,8 @@
     <colgroup>
         <col span="3">
         <col style="width: 16%">
-        <col span="2" style="width: 13%">
+        <col style="width: 14%">
+        <col span="3" style="width: 12%">
     </colgroup>
     <tr>
         @* 點選排序功能 (點一下遞增, 點兩下遞減)
@@ -49,17 +50,18 @@
         *@
         <th class="item-edit">刪除</th>
         <th class="item-edit">修改</th>
-        <th>
-            <button class="text-left th-sort-toggle">標題</button>
-        </th>
+        <th class="text-left">標題</th>
         <th>
             <button class="th-sort-toggle">發佈日期</button>
         </th>
         <th>
-            <button class="th-sort-toggle">前台排序</button>
+            <button class="th-sort-toggle">前台顯示</button>
         </th>
         <th>
-            <button class="th-sort-toggle">前台顯示</button>
+            <button class="th-sort-toggle">首頁顯示</button>
+        </th>
+        <th>
+            <button class="th-sort-toggle">前台排序</button>
         </th>
     </tr>
     <tr>
@@ -71,11 +73,13 @@
         </td>
         <td class="text-left">TEXT</td>
         <td>2017-03-27</td>
-        <td>10</td>
         <td>
             <span class="label-success">顯示</span>
-            @* <span class="label">隱藏</span> *@
         </td>
+        <td>
+            <span class="label">隱藏</span>
+        </td>
+        <td>10</td>
     </tr>
 </table>
 <footer class="table-foot">
