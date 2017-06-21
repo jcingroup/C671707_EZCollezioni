@@ -217,6 +217,7 @@
     <Content Include="Content\font\open-iconic\open-iconic.woff" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Home\Show_S1.cshtml" />
     <Content Include="Views\Home\Flow.cshtml" />
@@ -262,7 +263,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53529</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
