@@ -276,7 +276,7 @@ hr {
 p {
   margin: 0; }
   p + p {
-    margin-top: 1px solid #9E9E9E; }
+    margin-top: 0.7rem; }
 
 abbr[title],
 abbr[data-original-title] {
@@ -290,6 +290,9 @@ ol, ul, dl {
   ol ol, ol ul, ol dl, ul ol, ul ul, ul dl, dl ol, dl ul, dl dl {
     font-size: 90%;
     margin: 1.5rem 0 1.5rem 3rem; }
+
+dt {
+  font-weight: bold; }
 
 dd {
   margin-left: 0; }

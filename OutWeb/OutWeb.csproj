@@ -156,6 +156,7 @@
     <Content Include="Content\css\vendor\open-iconic.css" />
     <Content Include="Content\css\vendor\swiper.min.css" />
     <Content Include="Content\font\open-iconic\open-iconic.svg" />
+    <Content Include="Content\images\banner-about.jpg" />
     <Content Include="Content\images\banner-faq.jpg" />
     <Content Include="Content\images\banner-news.jpg" />
     <Content Include="Content\images\btn-fb.gif" />

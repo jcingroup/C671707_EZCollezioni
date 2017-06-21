@@ -227,7 +227,7 @@ hr {
 p {
   margin: 0; }
   p + p {
-    margin-top: 1px solid #9E9E9E; }
+    margin-top: 0.7rem; }
 
 abbr[title],
 abbr[data-original-title] {
