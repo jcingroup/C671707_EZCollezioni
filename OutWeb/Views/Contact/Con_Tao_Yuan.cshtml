@@ -5,5 +5,49 @@
     ViewBag.subnav = "store_taoyuan";
 }
 
-<h2>@ViewBag.Title</h2>
+<section class="main small-width">
 
+    <section class="m-t-48 m-b-64 text-center">
+        <div class="grid c-1-2">
+            <img src="~/Content/images/contact/ty-manager.jpg" alt="店經理:AJ Liou" class="circle">
+            <h3>店經理:AJ Liou</h3>
+        </div>
+
+        <div class="grid c-1-2">
+            <img src="~/Content/images/contact/ty-desinger.jpg" alt="資深設計師:Jason" class="circle">
+            <h3>資深設計師:Jason</h3>
+        </div>
+    </section>
+
+    <section class="row row-x-0">
+        <main class="col-md-6">
+
+            <ul class="list-unstyled font-lg">
+                <li>地址: 桃園市桃園區復興路278號(新光大樓斜對面)</li>
+                <li>電話: (03)336-6090</li>
+                <li>營業時間: 12:00 ~ 22:00 (假日無休,每星期三公休)</li>
+                <li>E-Mail: <a href="mailto:TY@ez.club.tw">TY@ez.club.tw</a></li>
+            </ul>
+
+            <p class="m-t-32 m-b-16">
+                親愛的訪客您好，您可於門市營業時間內，利用社群軟體與我們連絡，讓我們以最快的速度為您服務。<br>
+                若門市客人較多，可能會無法立即回應，或可改撥門市電話與我們連絡。謝謝!
+            </p>
+
+            <div class="fb-like" data-href="https://www.facebook.com/EZTPGF" data-width="400" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="true" data-send="false"></div>
+
+            <nav class="club-nav">
+                <a href="line://ti/p/hNeTtB6J1e" title="LINE"><img src="~/Content/images/contact/Line.gif"></a>
+                <a href="http://m.me/EZTYFC" title="FB Messenger"><img src="~/Content/images/contact/FB_MSG.gif"></a>
+            </nav>
+
+        </main>
+
+        <aside class="map col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.317215984006!2d121.30564531550998!3d24.989334883993283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f1d665ae71b%3A0xb5eb9767222ffd14!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5b6p6IiI6LevMjc46Jmf!5e0!3m2!1szh-TW!2stw!4v1498126848220" width="100%" height="440" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </aside>
+    </section>
+
+    @Html.Partial("sidebar")
+
+</section>

@@ -5,5 +5,50 @@
     ViewBag.subnav = "store_sanmin";
 }
 
-<h2>@ViewBag.Title</h2>
+<section class="main small-width">
+
+    <section class="m-t-48 m-b-64 text-center">
+        <div class="grid c-1-2">
+            <img src="~/Content/images/contact/sm-manager.jpg" alt="店經理:Vincent" class="circle">
+            <h3>店經理:Vincent</h3>
+        </div>
+
+        <div class="grid c-1-2">
+            <img src="~/Content/images/contact/sm-desinger.jpg" alt="資深設計師:Blanc" class="circle">
+            <h3>資深設計師:Blanc</h3>
+        </div>
+    </section>
+
+    <section class="row row-x-0">
+        <main class="col-md-6">
+
+            <ul class="list-unstyled font-lg">
+                <li>地址: 台中市北區英才路386-9號(博館一街口)</li>
+                <li>電話: (04)2322-0008</li>
+                <li>營業時間: 12:00 ~ 22:00 (假日無休,每星期三公休)</li>
+                <li>E-Mail: <a href="mailto:TC@ez.club.tw">TC@ez.club.tw</a></li>
+            </ul>
+
+            <p class="m-t-32 m-b-16">
+                親愛的訪客您好，您可於門市營業時間內，利用社群軟體與我們連絡，讓我們以最快的速度為您服務。<br>
+                若門市客人較多，可能會無法立即回應，或可改撥門市電話與我們連絡。謝謝!
+            </p>
+
+            <div class="fb-like" data-href="https://www.facebook.com/EZTPGF" data-width="400" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="true" data-send="false"></div>
+
+            <nav class="club-nav">
+                <a href="line://ti/p/ttAF_1uZIl" title="LINE"><img src="~/Content/images/contact/Line.gif"></a>
+                <a href="http://m.me/EZTCSM" title="FB Messenger"><img src="~/Content/images/contact/FB_MSG.gif"></a>
+            </nav>
+
+        </main>
+
+        <aside class="map col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.4764166628593!2d120.66631321549703!3d24.155019084391455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d7786cc3353%3A0x163c222e6593729e!2zNDA05Y-w5Lit5biC5YyX5Y2A6Iux5omN6LevMzg26Jmf!5e0!3m2!1szh-TW!2stw!4v1498123463175" width="100%" height="440" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </aside>
+    </section>
+
+    @Html.Partial("sidebar")
+
+</section>
 
