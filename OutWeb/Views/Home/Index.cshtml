@@ -14,7 +14,8 @@
             autoplay: 5000,
             autoplayDisableOnInteraction: false,
             speed: 1000,
-            grabCursor: true
+            // grabCursor: true,
+            effect: 'fade'
         });
     </script>
 }
@@ -22,11 +23,15 @@
 <section id="banner" class="swiper-container">
     <main id="setBanner" class="swiper-wrapper">
         <div class="swiper-slide"><img src="~/Content/images/index/banner1.jpg" alt="b1"></div>
+        <div class="swiper-slide"><img src="~/Content/images/index/banner2.jpg" alt="b2"></div>
+        <div class="swiper-slide"><img src="~/Content/images/index/banner3.jpg" alt="b3"></div>
+        <div class="swiper-slide"><img src="~/Content/images/index/banner4.jpg" alt="b4"></div>
+        <div class="swiper-slide"><img src="~/Content/images/index/banner5.jpg" alt="b5"></div>
     </main>
 </section>
 
 <section class="wrap m-y-24 bg-muted">
-    <article class="col-md-6 text-left p-x-48 p-y-32">
+    <article class="col-6 text-left p-x-48 p-y-32">
         <header class="title underline font-xxxl m-b-32"><span>NEWS</span></header>
         <nav class="news-list">
             @* 套程式-連結到 News/News 頁的錨點 *@
@@ -36,13 +41,13 @@
             <a href="~/News#n4">營業時間調整公告</a>
         </nav>
     </article>
-    <aside class="col-md-6 p-r-0">
+    <aside class="col-6 p-r-0">
         <img src="~/Content/images/index/news.jpg" alt="最新消息插圖" class="full">
     </aside>
 </section>
 
 <section class="wrap m-y-48">
-    <figure class="col-md-6">
+    <figure class="col-6">
         <img src="~/Content/images/index/activity1.jpg" alt="訂製結婚西服 新婚賀禮大方送">
         <figcaption>
             <h2 class="m-b-24">訂製結婚西服<br>新婚賀禮大方送</h2>
@@ -50,7 +55,7 @@
         </figcaption>
     </figure>
 
-    <figure class="col-md-6">
+    <figure class="col-6">
         <img src="~/Content/images/index/activity2.jpg" alt="滿額禮 優惠活動 全省同步開跑!!">
         <figcaption>
             <h2 class="m-b-24">滿額禮 優惠活動<br>全省同步開跑!!</h2>
@@ -58,7 +63,7 @@
         </figcaption>
     </figure>
 
-    @* <div class="col-md-6">
+    @* <div class="col-6">
         <main class="pic-info">
             <img src="~/Content/images/index/tg3d.jpg" alt="Scnatic 360 人體掃描機">
             <h3>Scnatic 360 人體掃描機</h3>
@@ -67,7 +72,7 @@
         <a href="https://www.youtube.com/watch?v=NTVSxCk2X44&feature=youtu.be" target="new" class="btn font-sp">Watch The Film</a>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-6">
         <main class="pic-info">
             <img src="~/Content/images/index/gallery.jpg" alt="EZ photo">
         </main>
@@ -76,11 +81,11 @@
 </section>
 
 <section class="wrap m-y-24 bg-muted">
-    <article class="col-md-5 products">
+    <article class="col-5 products">
         <header class="title font-jumbo">男士精品</header>
         <a href="~/Home/Show_S1" class="btn font-sp">Read More</a>
     </article>
-    <aside class="col-md-7 p-r-0">
+    <aside class="col-7 p-r-0">
         <img src="~/Content/images/index/products.jpg" alt="男士精品插圖" class="full">
     </aside>
 </section>
@@ -104,3 +109,11 @@
         <a href="~/Home/Maintain" class="btn bg-primary font-sp">Read More</a>
     </div>
 </section>
+
+@* 彈出視窗 *@
+<div class="modal" id="popup">
+    <main class="modal-content">
+        <button class="modal-close" onclick="document.getElementById('popup').style.display='none'">&#215;</button>
+        <img src="~/Content/images/index/notice.jpg">
+    </main>
+</div>

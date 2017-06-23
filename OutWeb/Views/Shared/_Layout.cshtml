@@ -65,20 +65,20 @@ else
     <footer id="footer">
         <div class="wrap row-x-0">
             <nav class="foot-nav row-x-0">
-                <div class="col-md-4">
+                <div class="col-4">
                     <a href="~/Home/About" class="@(ViewBag.BodyClass == "About" ? "current" : "")">品牌故事</a>
                     <a href="~/Home/Best_choice" class="@(ViewBag.BodyClass == "Best_choice" ? "current" : "")">選擇EZ的10大理由</a>
                     <a href="~/Home/Flow" class="@(ViewBag.BodyClass == "Flow" ? "current" : "")">訂製流程</a>
                     <a href="~/Home/TieKnot" class="@(ViewBag.BodyClass == "TieKnot" ? "current" : "")">領帶的打法</a>
                     <a href="~/Home/Maintain" class="@(ViewBag.BodyClass == "Maintain" ? "current" : "")">西服保養技巧</a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-4">
                     @* <a href="~/Home/Gallery" class="@(ViewBag.BodyClass == "Gallery" ? "current" : "")">EZ Gallery</a> *@
                     <a href="~/Home/Show_S1" class="@(ViewBag.BodyClass == "Show_S1" ? "current" : "")">男士精品</a>
                     <a href="~/Home/Wedding" class="@(ViewBag.BodyClass == "Wedding" ? "current" : "")">新婚賀禮大方送</a>
                     <a href="~/Home/Event" class="@(ViewBag.BodyClass == "Event" ? "current" : "")">滿額禮優惠活動</a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-4">
                     <a href="~/News" class="@(ViewBag.BodyClass == "News" ? "current" : "")">最新消息</a>
                     <a href="~/QandA" class="@(ViewBag.subnav == "QandA" ? "current" : "")">常見問題</a>
                     <a href="~/OnLine" class="@(ViewBag.BodyClass == "OnLine" ? "current" : "")">線上諮詢</a>
@@ -86,15 +86,15 @@ else
             </nav>
             <dl class="foot-contact row-x-0">
                 <dt class="underline">門市資訊：</dt>
-                <dd class="col-md-6">
+                <dd class="col-6">
                     台北形象概念店/ (02)2711-0033<br> @* new *@
                     台北西門店/ (02)2375-1000<br>
-                    台北光復店/ (02)2778-3356<br>
+                    台北光復店/ (02)2711-0033<br> @* 2778-3356 *@
                     桃園復興店/ (03)336-6090<br>
                     新竹形象概念店/ (03)515-3555<br> @* new *@
-                    新竹中華店/ (03)532-5555
+                    新竹中華店/ (03)515-3555
                 </dd>
-                <dd class="col-md-6">
+                <dd class="col-6">
                     台中英才店/ (04)2322-0008<br>
                     台南中正店/ (06)220-3311<br>
                     高雄中正店/ (07)238-2887
@@ -121,6 +121,12 @@ else
                 $('.goTop').fadeOut();
             }
         }, { offset: '-1px' } );
+
+        // 暫放
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+            $('#header').css('top', scrollTop);
+        });
 
         // 點選後跳到 href 指向的位置
         $('.scroll').click(function () {
